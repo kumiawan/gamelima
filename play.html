@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <audio id="background-audio" src="./assets/audio/yougoingtohell.mp3" autoplay loop></audio>
+  <title>Iqro Academy</title>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen bg-cover"
+  style="background-image: url('/home/e41221137/lab/project/iqroAcademy/assets/images/bg/ingame.png');">
+
+  <!-- btn audio -->
+  <div class="absolute top-4 left-4">
+    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+      onclick="playAudio()">Play</button>
+    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700"
+      onclick="pauseAudio()">Pause</button>
+  </div>
+
+  <!-- btn exit -->
+  <div class="absolute top-4 right-4">
+    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+      onclick="location.href='index.html'">Exit</button>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg p-6 w-1/2 mx-8">
+    <h1 class="text-2xl font-bold text-center mb-4">Iqro Academy</h1>
+    <div id="score" class="text-lg mb-4">Skor: 0</div> <!-- Elemen untuk menampilkan skor -->
+    <div id="question" class="text-lg mb-4"></div>
+    <img id="image" src="" alt="Gambar Pertanyaan" class="w-40 mb-4">
+    <div id="options" class="grid grid-cols-2 gap-4"></div>
+    <div id="result" class="mt-4 text-center text-lg"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
