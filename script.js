@@ -1,17 +1,66 @@
 const questions = [
+
     {
-        question: "huruf apakah ini م",
+        question: "huruf apakah ini ?",
         images: "./assets/images/lvl1/mim.png",
         options: ["mim", "Ba`", "Ta`", "Tsa`"],
         answer: "mim"
     },
     {
-        question: "huruf apakah ini ح",
+        question: "huruf apakah ini ?",
         images: "./assets/images/lvl1/kha.png",
+        options: ["Sin", "Shad", "Ha`", "Kha`"],
+        answer: "Kha"
+    },
+
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Fa.png",
+        options: ["mim", "Fa", "Ta`", "Tsa`"],
+        answer: "Fa"
+    },
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Ha.png",
         options: ["Sin", "Shad", "Ha`", "Kha`"],
         answer: "Ha`"
     },
-    // Tambahkan pertanyaan lainnya
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Wa.png",
+        options: ["mim", "Ba`", "Ta`", "Wa`"],
+        answer: "Wa`"
+    },
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Za.png",
+        options: ["Sin", "Za", "Ha`", "Kha`"],
+        answer: "Za"
+    },
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Kof.png",
+        options: ["Kof", "Ba`", "Ta`", "Tsa`"],
+        answer: "Kof"
+    },
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Bak.png",
+        options: ["Sin", "Ba", "Ha`", "Kha`"],
+        answer: "Ba"
+    },
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Dlo.png",
+        options: ["mim", "Ba`", "Ta`", "Dlo"],
+        answer: "Dlo"
+    },
+    {
+        question: "huruf apakah ini ?",
+        images: "./assets/images/lvl1/Gho.png",
+        options: ["Sin", "Shad", "Ha`", "Gho"],
+        answer: "Gho"
+    },
 ];
 
 let currentQuestionIndex = 0;
@@ -22,12 +71,16 @@ const imageElement = document.getElementById("image");
 const optionsElement = document.getElementById("options");
 const resultElement = document.getElementById("result");
 const scoreElement = document.getElementById("score");
+const questionCounterElement = document.getElementById("question-counter"); // Tambahkan elemen untuk counter soal
 
 function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
     imageElement.src = currentQuestion.images;
     optionsElement.innerHTML = ""; // Kosongkan pilihan sebelumnya
+
+    // Perbarui jumlah soal
+    questionCounterElement.textContent = `Soal ${currentQuestionIndex + 1} dari ${questions.length}`;
 
     currentQuestion.options.forEach(option => {
         const button = document.createElement("button");
@@ -75,7 +128,6 @@ function displayFinalScore() {
     resultElement.textContent = `Permainan Selesai! Skor Anda: ${score}`;
 }
 
-// 
 const audio = document.getElementById('background-audio');
 
 // Function to play audio
